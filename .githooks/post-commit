@@ -14,9 +14,7 @@ for SKILL_FILE in $CHANGED; do
   fi
 
   TAG="${SKILL_NAME}/${VERSION}"
-  if git tag "$TAG" 2>/dev/null; then
+  if git tag -f "$TAG" 2>/dev/null; then
     echo "[skills] 已打 tag: $TAG"
-  else
-    echo "[skills] tag $TAG 已存在，跳过"
   fi
 done
