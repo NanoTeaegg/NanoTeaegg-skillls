@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir -p /Users/teaegg/Code_Projects/myskills/skills/web-development \\\\ *)",
+      "Bash(git init *)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(mkdir -p /Users/teaegg/Code_Projects/myskills/.git/hooks)",
+      "Bash(chmod +x /Users/teaegg/Code_Projects/myskills/.git/hooks/post-commit)",
+      "Bash(git commit *)",
+      "Bash(mkdir -p /Users/teaegg/Code_Projects/myskills/.githooks && cp /Users/teaegg/Code_Projects/myskills/.git/hooks/post-commit /Users/teaegg/Code_Projects/myskills/.githooks/post-commit)",
+      "Bash(chmod +x /Users/teaegg/Code_Projects/myskills/.githooks/post-commit)",
+      "Bash(git config *)"
+    ],
+    "additionalDirectories": [
+      "/Users/teaegg/Code_Projects/myskills/skills",
+      "/Users/teaegg/Code_Projects/myskills/.git/hooks"
+    ]
+  }
+}
