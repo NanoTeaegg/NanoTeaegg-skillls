@@ -26,6 +26,14 @@ git checkout <skill-name>/v0.9 -- skills/<skill-name>/
 git commit -m "revert <skill-name> to v0.9"
 ```
 
+## 推送
+
+每次推送时需附带 `--tags`：
+
+```bash
+git push --tags
+```
+
 ## 部署到 ~/.claude/skills/
 
 ```bash

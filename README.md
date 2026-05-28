@@ -52,6 +52,14 @@ git commit -m "revert <skill-name> to v0.9"
 git config core.hooksPath .githooks
 ```
 
+## 推送
+
+每次推送时需附带 `--tags`，确保版本 tag 同步到 GitHub：
+
+```bash
+git push --tags
+```
+
 ## 部署到本地
 
 ```bash
