@@ -1,0 +1,21 @@
+#!/bin/bash
+# 提交后自动读取被修改的 SKILL.md 中的 version 字段并打 tag
+
+CHANGED=$(git diff-tree --no-commit-id -r --name-only HEAD | grep 'skills/.*/SKILL.md')
+
+for SKILL_FILE in $CHANGED; do
+  SKILL_NAME=$(echo "$SKILL_FILE" | cut -d'/' -f2)
+  VERSION=$(grep '^version:' "$SKILL_FILE" | sed 's/version:[[:space:]]*//' | tr -d '[:space:]')
+
+  if [ -z "$VERSION" ]; then
+    echo "[skills] 警告: $SKILL_FILE 缺少 version 字段，跳过打 tag"
+    continue
+  fi
+
+  TAG="${SKILL_NAME}/${VERSION}"
+  if git tag "$TAG" 2>/dev/null; then
+    echo "[skills] 已打 tag: $TAG"
+  else
+    echo "[skills] tag $TAG 已存在，跳过"
+  fi
+done
