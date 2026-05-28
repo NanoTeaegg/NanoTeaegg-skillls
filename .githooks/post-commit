@@ -4,7 +4,7 @@
 CHANGED=$(git diff-tree --no-commit-id -r --name-only HEAD | grep 'skills/.*/SKILL.md')
 
 for SKILL_FILE in $CHANGED; do
-  SKILL_NAME=$(echo "$SKILL_FILE" | cut -d'/' -f2)
+  SKILL_NAME=$(basename $(dirname "$SKILL_FILE"))
   VERSION=$(grep '^version:' "$SKILL_FILE" | sed 's/version:[[:space:]]*//' | tr -d '[:space:]')
 
   if [ -z "$VERSION" ]; then
