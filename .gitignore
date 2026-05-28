@@ -2,3 +2,4 @@
 .specstory/
 workspaces/
 *.skill
+.claude/settings.local.json
