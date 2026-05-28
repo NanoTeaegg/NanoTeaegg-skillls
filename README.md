@@ -1,6 +1,6 @@
 # myskills
 
-个人 Claude Code skills 的 monorepo，用于统一开发、版本管理和部署自定义 skills。
+NanoTeaegg的Skills合集，通过monorepo架构用于统一开发、版本管理和部署自定义 skills。
 
 ## 目录结构
 
