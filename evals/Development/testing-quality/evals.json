@@ -1,0 +1,23 @@
+{
+  "skill_name": "testing-quality",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "我们已经有 docs/PRD.md、docs/UX.md、docs/TECH_DESIGN.md，是一个 Next.js 会议室预订系统，项目里已经有 package.json 和 Playwright。请读取前置文档和项目结构，产出测试计划，并补上核心自动化测试代码，至少覆盖查看会议室、创建预订、重复预订失败这几个 P0 验收标准。",
+      "expected_output": "一份写入 docs/TEST_PLAN.md 的中文测试计划，包含验收标准映射、Web 测试策略、质量门禁、自动化测试代码清单、运行命令、测试结果、边界与非目标、开放问题和变更记录；同时在项目测试目录生成 Playwright 或现有框架风格的测试代码，覆盖 P0 主路径和重复预订失败场景。不修改业务实现代码，不重新定义功能需求或技术架构。",
+      "files": ["docs/PRD.md", "docs/UX.md", "docs/TECH_DESIGN.md", "package.json", "playwright.config.ts"]
+    },
+    {
+      "id": 2,
+      "prompt": "这是一个同时包含 iOS 和 Android 客户端的健身房预约项目，PRD 和 TECH_DESIGN 都在 docs 里。请帮我做测试与质量方案，并分别给 iOS 和 Android 补最小可运行的 UI 自动化测试样例，覆盖会员登录后预约私教课的主路径。",
+      "expected_output": "一份写入 docs/TEST_PLAN.md 的中文测试计划，按 iOS 和 Android 分开说明测试工具链、目录、命令、设备/模拟器矩阵、验收标准映射和质量门禁；生成 iOS XCUITest/XCTest 或项目已有风格的测试文件，以及 Android Espresso/Compose UI Test 或项目已有风格的测试文件。不把移动端测试混成泛前端方案，不写业务实现代码。",
+      "files": ["docs/PRD.md", "docs/TECH_DESIGN.md", "ios/GymApp.xcodeproj/project.pbxproj", "android/settings.gradle", "android/app/build.gradle"]
+    },
+    {
+      "id": 3,
+      "prompt": "TEST_PLAN 已经有了。现在 PRD 新增了一个验收标准：管理员导出订阅收入报告时，如果没有数据，要给出空报告并显示明确提示。请更新测试计划，并补上对应的自动化测试。",
+      "expected_output": "在已有 docs/TEST_PLAN.md 上原地更新：新增验收标准映射、补充自动化测试代码清单和运行命令，生成覆盖空报告导出的测试文件或更新现有测试文件，并在变更记录追加一行。保留原文档主体，不重写整篇，不修改业务实现代码。",
+      "files": ["docs/PRD.md", "docs/TECH_DESIGN.md", "docs/TEST_PLAN.md", "package.json"]
+    }
+  ]
+}

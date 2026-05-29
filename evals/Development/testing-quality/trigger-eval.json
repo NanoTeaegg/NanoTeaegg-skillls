@@ -1,0 +1,22 @@
+[
+  {"query": "PRD 和 TECH_DESIGN 都写好了,现在帮我把验收标准映射成测试计划,顺便补自动化测试代码", "should_trigger": true},
+  {"query": "这个 Next.js 项目已经有 Playwright,帮我根据 docs/PRD.md 的 P0 功能补几条 E2E 测试并写 TEST_PLAN.md", "should_trigger": true},
+  {"query": "iOS app 现在要做 XCUITest,覆盖登录后预约课程的主路径,同时把质量门禁写进测试计划", "should_trigger": true},
+  {"query": "Android 端帮我补 Compose UI Test,按 PRD 验收标准覆盖下单成功和库存不足失败", "should_trigger": true},
+  {"query": "帮我看一下项目结构,单元测试、集成测试、E2E 应该怎么分层?需要落到 docs/TEST_PLAN.md", "should_trigger": true},
+  {"query": "CI 里应该跑哪些测试?覆盖率门槛怎么设?我们要把测试命令和阻断规则整理出来", "should_trigger": true},
+  {"query": "根据技术方案里的风险,给关键 API 补 pytest 集成测试和轻量性能 smoke 脚本", "should_trigger": true},
+  {"query": "产品新增了空态验收标准,请更新 TEST_PLAN 并补一条自动化回归测试", "should_trigger": true},
+  {"query": "Web、iOS、Android 三端都要测试,帮我分平台写测试策略和自动化测试目录", "should_trigger": true},
+  {"query": "上线前我想确认 P0 主流程都有机器测试兜底,你读取前置文档后补测试计划和测试代码", "should_trigger": true},
+  {"query": "我想做一个内部会议室预订系统,先帮我把功能需求和验收标准理清楚", "should_trigger": false},
+  {"query": "把 PRD 里的用户流程、页面状态、错误提示整理成 UX.md", "should_trigger": false},
+  {"query": "帮我做开发启动技术方案,选 Next.js 还是 Vue,后端用什么 ORM", "should_trigger": false},
+  {"query": "给预约系统设计数据库表字段、外键、索引和迁移规范", "should_trigger": false},
+  {"query": "这个 bug 帮我直接修一下,用户重复提交导致创建了两条订单", "should_trigger": false},
+  {"query": "review 一下这个 PR 代码,看看有没有权限绕过和 N+1 查询", "should_trigger": false},
+  {"query": "帮我写一个 React 预订表单组件,接口先 mock", "should_trigger": false},
+  {"query": "我们想做真实生产压测,目标 10 万并发,请给出容量规划和压测执行", "should_trigger": false},
+  {"query": "帮我做一次完整安全渗透测试,看能不能拿到管理员权限", "should_trigger": false},
+  {"query": "把 TEST_PLAN.md 翻译成英文,保留 Markdown 表格", "should_trigger": false}
+]
