@@ -1,0 +1,23 @@
+[
+  {"query": "我们在做一个宠物医院的预约系统,有医生、宠物、主人、预约这几个概念,帮我把数据库表结构设计出来", "should_trigger": true},
+  {"query": "这个会员积分功能,积分流水、等级、兑换记录这些数据该怎么存?要建哪几张表", "should_trigger": true},
+  {"query": "用户表的主键你建议用自增整型还是 UUID?我们以后可能要分库", "should_trigger": true},
+  {"query": "文章和标签是多对多,这种关系在数据库里怎么建?要不要中间表", "should_trigger": true},
+  {"query": "我想给订单表加个软删除,顺便把 created_at updated_at created_by 这些审计字段补上,帮我把 schema 调整一下", "should_trigger": true},
+  {"query": "帮我理一下这个电商系统的数据模型,实体之间的关系和基数我有点乱,画个 ER 关系出来", "should_trigger": true},
+  {"query": "这个高并发的库存扣减场景,数据该用 PostgreSQL 还是 Mongo 存比较合适?帮我定个数据库", "should_trigger": true},
+  {"query": "团队现在迁移很乱,有人手写有人改表,帮我定一套迁移和回滚的规范,还有表和字段的命名约定", "should_trigger": true},
+  {"query": "docs/SCHEMA.md 里那个任务表,我要新增一个『重复任务规则』,加几个字段并更新设计文档", "should_trigger": true},
+  {"query": "我们要做多租户,每张表是该加 tenant_id 共享表,还是每个租户独立 schema?数据隔离这块帮我设计", "should_trigger": true},
+
+  {"query": "我这个 Next.js 项目该用 Prisma 还是 Drizzle 做 ORM?", "should_trigger": false},
+  {"query": "帮我写一段 SQL,统计上周每个渠道的注册转化率,给运营出个表", "should_trigger": false},
+  {"query": "线上 orders 表那条按 user_id 查的语句越来越慢了,帮我看看怎么调优", "should_trigger": false},
+  {"query": "这个内部审批工具到底该有哪些功能?帮我把需求和优先级理一理", "should_trigger": false},
+  {"query": "后台这个数据列表页,筛选器和分页该怎么排版交互更顺手", "should_trigger": false},
+  {"query": "我们这个新项目后端用 Go 还是 Node,整体架构怎么分层,帮我做技术选型", "should_trigger": false},
+  {"query": "生产库要做主从复制和每天自动备份,帮我配一下容灾方案", "should_trigger": false},
+  {"query": "帮我把 UserRepository 这个类的增删改查方法用 TypeScript 实现出来", "should_trigger": false},
+  {"query": "帮我把 mongo 里这个 collection 导出成 CSV 发给财务", "should_trigger": false},
+  {"query": "数据库突然连不上了,报 too many connections,帮我排查下怎么回事", "should_trigger": false}
+]
