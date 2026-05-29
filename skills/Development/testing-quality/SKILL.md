@@ -1,7 +1,7 @@
 ---
 name: testing-quality
-description: 把 PRD、UX、技术方案和现有项目结构转成可执行的测试与质量方案,产出 docs/TEST_PLAN.md 并生成/维护自动化测试代码。当用户说"帮我写测试计划""根据 PRD 验收标准补测试""把这个项目的单元/集成/E2E 测试搭起来""给 Web/iOS/Android 项目补自动化测试""Playwright/XCTest/Espresso/JUnit/pytest/Vitest 测试怎么写""质量门禁怎么定""CI 里测试怎么跑""根据 TECH_DESIGN 做测试策略""把验收标准映射成测试用例""性能 smoke/load 测试怎么做""测试覆盖率要求怎么设""更新 TEST_PLAN"时就触发本 skill。先读取 docs/PRD.md、docs/UX.md、docs/TECH_DESIGN.md、docs/SCHEMA.md(如存在)和项目结构,再访谈确认测试重点、允许新增的测试依赖和质量门禁,然后生成测试计划与自动化测试代码。支持 Web、iOS、Android、后端/API 和多端项目,但不写业务实现代码、不重新定义功能需求、不改技术架构、不替代安全审计或真实生产压测。
-version: v0.1
+description: 测试质量 skill——把 PRD/UX/技术方案转成可执行的测试计划和自动化测试代码，产出 TEST_PLAN.md。当用户要写测试计划、补自动化测试（Web/iOS/Android/后端）、定质量门禁或 CI 测试策略时触发。不写业务实现代码，不改架构，不替代安全审计或生产压测。
+version: v0.2
 ---
 
 # 测试与质量(Testing Quality)

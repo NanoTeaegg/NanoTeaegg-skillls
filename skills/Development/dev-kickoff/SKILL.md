@@ -1,7 +1,7 @@
 ---
 name: dev-kickoff
-description: 把 PRD 和 UX 中已经明确的"要做什么、用户怎么用"翻译成"准备用什么技术做、系统怎么拆、关键技术决策是什么",产出开发启动技术方案 docs/TECH_DESIGN.md。当用户说"技术方案怎么定""开发启动前帮我把架构捋一下""这个产品用什么技术栈""React/Vue/Next 怎么选""安卓/iOS/网页/Windows 客户端分别怎么做""后端用什么框架和 ORM""帮我写 TECH_DESIGN""从 PRD/UX 进入开发阶段""模块怎么划分""关键技术风险是什么""开发 kickoff 文档""技术选型和架构设计"时就触发本 skill。优先读取 docs/PRD.md 和 docs/UX.md;如果没有这些文档,也要通过结构化访谈直接向用户补齐背景和约束后继续。必须把 Android app、iOS app、Web、Windows 应用的客户端技术栈分开判断和说明,不要混成一个泛前端方案。不做功能需求定义(PRD)、交互/视觉设计(UX)、数据库表结构细节(database)、具体业务代码实现。
-version: v0.1
+description: 技术方案 skill——把 PRD/UX 已明确的需求翻译成技术选型、模块划分和关键技术决策，产出 TECH_DESIGN.md。当用户讨论技术栈选型、架构设计、开发 kickoff 时触发。不含功能需求（→ requirements-definition）、交互/视觉设计（→ ux-design/ui-design）、数据库细节（→ database）、业务代码实现。
+version: v0.2
 ---
 
 # 开发启动技术方案(Dev Kickoff)

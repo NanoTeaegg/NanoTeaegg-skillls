@@ -1,7 +1,7 @@
 ---
 name: frontend-dev
-description: 把 UI_SPEC.md、UX.md、TECH_DESIGN.md 里已经明确的"界面长什么样、用户怎么用、用什么技术做"翻译成真实可运行的前端界面代码。当用户说"帮我把界面做出来""按 UI 规范写前端""把这个页面实现一下""参照设计文档写组件""前端代码怎么实现这个交互""按 UX 文档做状态处理""帮我改这个页面的样式""UI_SPEC 里定的 token/颜色/字体在代码里用上""这个功能的前端怎么写""把设计稿落地""修改这个界面/组件/页面""按文档验收前端代码"时就触发本 skill。支持 Web、iOS（SwiftUI/UIKit）、Android（Compose/XML）三端，两条主路径：新建和修改/迭代。以文档为事实源——UI_SPEC、UX、TECH_DESIGN 中已有明确规定的，直接对齐实现；遇到文档未覆盖或有歧义的决策，先问用户，不擅自拍板。不做需求变更（→ requirements-definition）、交互设计（→ ux-design）、视觉规范定义（→ ui-design）、数据库设计（→ database）、技术架构选型（→ dev-kickoff）。
-version: v0.1
+description: 前端实现 skill——按 UI_SPEC/UX/TECH_DESIGN 已明确的规范，写出可运行的界面代码（Web/iOS/Android）。当用户要把设计文档/界面规范落地为代码、修改/验收已有界面时触发。不含需求变更（→ requirements-definition）、交互/视觉规范定义（→ ux-design/ui-design）、架构选型（→ dev-kickoff）。
+version: v0.2
 ---
 
 # 前端实现(Frontend Dev)

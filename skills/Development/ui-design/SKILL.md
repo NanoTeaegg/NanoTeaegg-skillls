@@ -1,7 +1,7 @@
 ---
 name: ui-design
-description: 把 PRD、UX 和技术方案里已经明确的"做什么、用户怎么用、目标平台是什么"翻译成"某一个目标平台的界面应该长什么样、视觉规则怎么统一、组件状态怎么规范",产出或维护 UI 设计规范文档。当用户说"帮我定 UI 规范""视觉设计怎么做""把 UX 转成 UI 规范""设计系统怎么定义""颜色/字体/间距/圆角/阴影怎么定""组件规范怎么写""按钮、表单、表格、弹窗状态怎么统一""这个 Web 后台/iOS App/Android App/小程序界面风格怎么定""帮我写 UI_SPEC/DESIGN_SYSTEM""前端实现前先定一份界面规范"时就触发本 skill。必须先读取 docs/PRD.md、docs/UX.md 和 docs/TECH_DESIGN.md(若存在),从上游文档和用户当前请求中判断单一目标平台:Web 就只写 Web UI 规范,iOS 就只写 iOS UI 规范,Android 就只写 Android UI 规范,不要默认把所有平台规则一次性展开。若多个平台都在范围内但用户没指定本次目标平台,先问用户选择一个。使用 assets/ui-spec-template.md 和 assets/design-token-template.md 作为结构化输出骨架,再按 references/platform-*.md 读取对应平台规则。不做功能需求定义(PRD),不重新设计用户流程/信息架构(UX),不做技术栈/组件库选型(dev-kickoff),不写前端代码,不输出 Figma 文件或图片设计稿。
-version: v0.3
+description: UI 规范 skill——把 PRD/UX/技术方案中已明确的信息转成单一目标平台的视觉规范和组件规则，产出 UI_SPEC.md。当用户要定界面视觉规则、Design Token、组件状态规范（颜色/字体/间距/圆角/阴影/按钮/表单/弹窗）时触发。不含功能需求（→ requirements-definition）、交互流程（→ ux-design）、技术选型（→ dev-kickoff）、前端代码（→ frontend-dev）。
+version: v0.4
 ---
 
 # UI 设计规范
