@@ -1,6 +1,6 @@
 # myskills
 
-Claude Code skills 的 monorepo。
+Codex skills 的 monorepo。
 
 ## 目录结构
 
@@ -34,10 +34,10 @@ git commit -m "revert <skill-name> to v0.9"
 git push --tags
 ```
 
-## 部署到 ~/.claude/skills/
+## 部署到 ~/.Codex/skills/
 
 ```bash
-cp -r skills/<name> ~/.claude/skills/<name>
+cp -r skills/<name> ~/.Codex/skills/<name>
 ```
 
 ## Skill 质量评测

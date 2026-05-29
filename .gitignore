@@ -1,5 +1,6 @@
 .DS_Store
 .specstory/
+.vscode/
 workspaces/
 *.skill
 .claude/settings.local.json

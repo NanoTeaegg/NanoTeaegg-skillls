@@ -1,0 +1,22 @@
+[
+  {"query": "老板让我牵头做一个公司内部报销审批系统,我脑子里就一个大概想法,帮我把要做的东西理清楚", "should_trigger": true},
+  {"query": "我想做个给宠物医院用的预约挂号小程序,功能上应该有哪些?帮我整理成需求文档", "should_trigger": true},
+  {"query": "我们要给现有电商 App 加一个会员积分体系,先把这块的需求和验收标准定下来", "should_trigger": true},
+  {"query": "帮我写一份 PRD,做一个面向健身教练的课程排期工具", "should_trigger": true},
+  {"query": "产品又改主意了,原来导出只要 Excel,现在还要支持 PDF 和定时邮件发送,把需求文档更新一下", "should_trigger": true},
+  {"query": "我有个 idea,想做帮独居老人和子女远程沟通的硬件+App,还很模糊,先帮我捋一捋到底要做什么", "should_trigger": true},
+  {"query": "把这个功能的范围和不做什么列清楚:用户上传简历然后 AI 自动生成面试题", "should_trigger": true},
+  {"query": "我们准备做一个 SaaS 客服工单系统,先不谈技术,把要实现的功能和优先级排一排", "should_trigger": true},
+  {"query": "docs 里那份需求文档,把『匿名评论』功能删掉,我们决定不做了", "should_trigger": true},
+  {"query": "给我整一份产品需求说明,做一个校园二手交易平台,主要给大学生用", "should_trigger": true},
+  {"query": "我这个 Next.js 项目该用 Prisma 还是 Drizzle 做 ORM?", "should_trigger": false},
+  {"query": "帮我把这个登录页按设计稿还原成 React 组件", "should_trigger": false},
+  {"query": "给这个用户表设计一下数据库表结构和索引", "should_trigger": false},
+  {"query": "review 一下我这个 PR,看看有没有 bug", "should_trigger": false},
+  {"query": "我的需求是这个函数要支持传入数组,你帮我改一下", "should_trigger": false},
+  {"query": "帮我写个 SQL 统计上周注册转化率,对接给数据团队", "should_trigger": false},
+  {"query": "我们产品的竞品有哪些?帮我做个市场调研", "should_trigger": false},
+  {"query": "帮我排个开发排期,这几个功能两周内怎么分工", "should_trigger": false},
+  {"query": "用户反馈预订老是失败,帮我看下后端日志定位问题", "should_trigger": false},
+  {"query": "把 PRD 里的功能需求翻译成英文", "should_trigger": false}
+]
