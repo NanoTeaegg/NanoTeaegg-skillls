@@ -96,5 +96,5 @@ git push --tags
 ## 部署到本地
 
 ```bash
-cp -r skills/<category>/<skill-name> ~/.claude/skills/<skill-name>
+cp -r skills/<category>/<skill-name> ~/.agent/skills/<skill-name>
 ```
