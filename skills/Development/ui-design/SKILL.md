@@ -1,7 +1,7 @@
 ---
 name: ui-design
 description: 把 PRD、UX 和技术方案里已经明确的"做什么、用户怎么用、目标平台是什么"翻译成"某一个目标平台的界面应该长什么样、视觉规则怎么统一、组件状态怎么规范",产出或维护 UI 设计规范文档。当用户说"帮我定 UI 规范""视觉设计怎么做""把 UX 转成 UI 规范""设计系统怎么定义""颜色/字体/间距/圆角/阴影怎么定""组件规范怎么写""按钮、表单、表格、弹窗状态怎么统一""这个 Web 后台/iOS App/Android App/小程序界面风格怎么定""帮我写 UI_SPEC/DESIGN_SYSTEM""前端实现前先定一份界面规范"时就触发本 skill。必须先读取 docs/PRD.md、docs/UX.md 和 docs/TECH_DESIGN.md(若存在),从上游文档和用户当前请求中判断单一目标平台:Web 就只写 Web UI 规范,iOS 就只写 iOS UI 规范,Android 就只写 Android UI 规范,不要默认把所有平台规则一次性展开。若多个平台都在范围内但用户没指定本次目标平台,先问用户选择一个。使用 assets/ui-spec-template.md 和 assets/design-token-template.md 作为结构化输出骨架,再按 references/platform-*.md 读取对应平台规则。不做功能需求定义(PRD),不重新设计用户流程/信息架构(UX),不做技术栈/组件库选型(dev-kickoff),不写前端代码,不输出 Figma 文件或图片设计稿。
-version: v0.2
+version: v0.3
 ---
 
 # UI 设计规范
@@ -18,11 +18,26 @@ version: v0.2
 
 ## 文件职责
 
+**模板**
 - `assets/ui-spec-template.md`: `docs/UI_SPEC.md` 的结构化骨架,包含一级/二级标题模块。
 - `assets/design-token-template.md`: token 分类、字段、默认值和填写规则。
-- `references/platform-web.md`: Web / Web 后台 / SaaS 的 UI 规范重点。
-- `references/platform-ios.md`: iOS App 的 UI 规范重点。
-- `references/platform-android.md`: Android App 的 UI 规范重点。
+
+**平台规范（详细，按需读取对应平台）**
+- `references/platform-web.md`: Web / SaaS / 后台的 UI 规范——token 区间、组件状态矩阵、暗色策略、布局规则。
+- `references/platform-ios.md`: iOS App——HIG 规范、系统色、SwiftUI 状态矩阵、安全区、深色模式策略。
+- `references/platform-android.md`: Android App——Material 3 色彩角色、State Layer、组件状态、深色模式策略。
+
+**视觉方向参考（按需读取）**
+- `references/style-seeds.md`: 产品气质关键词 → token 方向速查（效率工具/企业/金融/医疗/创意/AI/消费）。
+- `references/design-systems/INDEX.md`: 58 个真实品牌设计规范索引（按需读对应品牌文件，禁止全量加载）。
+- `references/design-systems/{brand}.md`: 单个品牌完整设计规范（颜色/字体/组件/布局，9 章节标准格式）。
+- `references/mobile-inspiration.md`: iOS/Android 无法爬取时，用 WebSearch 获取视觉灵感的指南和结果记录格式。
+
+**工具脚本（Web 端竞品参考提取）**
+- `scripts/crawl_website.py`: Playwright 爬虫，提取 Web 页面截图 + token + 结构（首选）。
+- `scripts/extract_design_tokens.py`: 轻量静态 token 提取（爬虫备选）。
+
+**质量**
 - `references/checklist.md`: 产出前自检清单。
 
 ## 何时触发哪条路径
@@ -70,6 +85,13 @@ version: v0.2
 4. 视觉偏好:主色、中性色、字体气质、圆角、阴影、图标风格。
 5. 核心组件范围:导航、按钮、表单、表格/列表、卡片、弹窗、Toast、图表、上传、步骤条等。
 6. 可访问性与模式:暗色模式、键盘可达、对比度、触控尺寸、弱网/低性能设备。
+
+**气质关键词 → token 初始方向**：访谈中获得气质描述后，先查 `references/style-seeds.md` 匹配最接近的种子，展示对应 token 方向供用户确认，再细化。
+
+**参考竞品**：
+- 用户提到"做成类似 XX 产品"时，先查 `references/design-systems/INDEX.md`，有预置则直接读取（Web 端最详细）。
+- Web 端无预置时，用 `scripts/crawl_website.py` 或 `scripts/extract_design_tokens.py` 提取（见 Step 4 说明）。
+- iOS/Android App 不可爬取，改用 `references/mobile-inspiration.md` 中的搜索方法获取视觉灵感（注意：仅供气质参考，不能直接转为精确 token）。
 
 ### Step 4. 读取模板与平台 reference
 
