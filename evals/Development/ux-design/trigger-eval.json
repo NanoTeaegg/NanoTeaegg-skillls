@@ -1,0 +1,22 @@
+[
+  {"query": "PRD 已经确认了，帮我把用户流程和交互逻辑整理成 UX 文档，主要是会议室预订系统", "should_trigger": true},
+  {"query": "这个页面有哪些状态？帮我把空态、加载态、错误态都说清楚，列进 UX.md 里", "should_trigger": true},
+  {"query": "用户从注册到第一次完成预订要经历哪些步骤？帮我画出来，或者文字描述一下用户旅程", "should_trigger": true},
+  {"query": "信息架构怎么规划？我想把产品的页面层级和导航结构整理出来，方便跟开发对齐", "should_trigger": true},
+  {"query": "帮我把这个 SaaS 的 UX 交互文档写一下，输入是已经有的 PRD，重点把首次进入的引导流程说清楚", "should_trigger": true},
+  {"query": "表单校验的交互逻辑怎么写？用户填错了该提示什么，我想更新一下 UX 文档里的校验说明", "should_trigger": true},
+  {"query": "产品加了新功能：用户可以邀请同事，帮我把这条新流程补进现有的 UX 文档里", "should_trigger": true},
+  {"query": "我们产品有两个角色——普通用户和管理员，导航和权限不一样，帮我把两条核心旅程都梳理出来写进交互文档", "should_trigger": true},
+  {"query": "删除操作怎么做确认机制？不可逆操作的全局交互规范帮我定一下，写到 UX.md 的全局模式章节", "should_trigger": true},
+  {"query": "PRD 里的「数据源连接」模块，我想把向导式分步流程的每一步都写清楚，包括用户操作和系统响应，存进 UX 文档", "should_trigger": true},
+  {"query": "我这个 Next.js 项目该选 shadcn/ui 还是 Ant Design？", "should_trigger": false},
+  {"query": "帮我把登录页的视觉设计做一下，主色调用蓝色，按钮圆角 8px", "should_trigger": false},
+  {"query": "给用户表设计一下数据库表结构，user_id、email、created_at 这几个字段要有", "should_trigger": false},
+  {"query": "帮我写一个 React 的预订表单组件，支持日期选择和时间段选择", "should_trigger": false},
+  {"query": "我想做一个会议室预订系统，功能上应该有哪些？帮我整理成需求文档", "should_trigger": false},
+  {"query": "review 一下我这个 PR，看看预订逻辑有没有 bug", "should_trigger": false},
+  {"query": "帮我排一下开发排期，这三个功能模块两周内怎么分工", "should_trigger": false},
+  {"query": "做一个 Figma 设计稿，风格参考 Linear，配色偏暗系", "should_trigger": false},
+  {"query": "用户反馈预订老是失败，帮我查一下后端日志，看是哪里报错", "should_trigger": false},
+  {"query": "把 PRD 里的功能需求翻译成英文，发给海外团队", "should_trigger": false}
+]
