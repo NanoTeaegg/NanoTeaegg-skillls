@@ -1,0 +1,80 @@
+{
+  "skill_name": "frontend-dev",
+  "evals": [
+    {
+      "id": 1,
+      "name": "web-button-component-from-ui-spec",
+      "prompt": "我有一份 UI_SPEC.md，里面定义了按钮组件规范：主按钮背景色用 --color-primary，hover 时加深 10%，disabled 时透明度 40%，圆角 --radius-md（8px），字体 14px semi-bold，高度 36px，左右 padding 16px。另外 UX.md 里写了：表单提交时按钮切换为 loading 状态，显示 spinner 并禁止重复点击，成功后恢复 default，失败后恢复 default 并提示错误。帮我用 React + CSS Modules 实现这个按钮组件，覆盖所有状态。",
+      "expected_output": "React Button 组件，CSS Modules 样式文件，覆盖 default/hover/active/focus/disabled/loading 状态，颜色通过 CSS 变量引用而非硬编码，有 props 控制 loading 和 disabled",
+      "assertions": [
+        {
+          "name": "css-uses-variables-not-hex",
+          "description": "CSS 文件中颜色使用 CSS 变量（var(--）而非硬编码 hex"
+        },
+        {
+          "name": "all-states-covered",
+          "description": "组件覆盖了 default、hover、disabled、loading 这四个核心状态"
+        },
+        {
+          "name": "loading-prevents-double-click",
+          "description": "loading 状态下按钮有 disabled 或 pointer-events:none 防止重复点击"
+        },
+        {
+          "name": "component-has-props",
+          "description": "组件通过 props 接受 loading 和 disabled 控制，不在内部硬管理"
+        }
+      ],
+      "files": []
+    },
+    {
+      "id": 2,
+      "name": "web-empty-state-from-ux-doc",
+      "prompt": "项目是一个任务管理 SaaS，UX.md 里写了：任务列表页有三种空态——①用户首次进入、还没创建任何任务时，显示插图+标题「还没有任务」+副标题「创建你的第一个任务，开始高效工作」+「创建任务」按钮；②搜索结果为空时，显示搜索无结果插图+「没有找到相关任务」+「清除筛选条件」文字按钮；③网络错误时，显示错误插图+「加载失败，请检查网络」+「重试」按钮。UI_SPEC 里定义了空态文字用 --color-text-secondary，标题 16px medium，副标题 14px regular，插图区域高度 120px，整体垂直居中。用 React + Tailwind CSS 帮我实现这个 EmptyState 组件（用 CSS 变量模拟 token，插图用 SVG 占位）。",
+      "expected_output": "React EmptyState 组件，通过 props 区分三种空态（firstVisit / noResults / networkError），三种变体都正确实现，样式对齐 UI_SPEC 描述，SVG 占位图代替真实插图",
+      "assertions": [
+        {
+          "name": "three-variants-implemented",
+          "description": "组件实现了三种空态变体：firstVisit、noResults、networkError（或类似名称）"
+        },
+        {
+          "name": "variant-controlled-by-prop",
+          "description": "通过 props 而非条件分支内联控制显示哪种空态"
+        },
+        {
+          "name": "secondary-color-applied",
+          "description": "文字颜色引用了 --color-text-secondary 或等效 CSS 变量"
+        },
+        {
+          "name": "vertically-centered",
+          "description": "组件内容垂直居中"
+        }
+      ],
+      "files": []
+    },
+    {
+      "id": 3,
+      "name": "modify-existing-form-add-validation",
+      "prompt": "我有一个已经写好的 React 登录表单组件 LoginForm.jsx，目前只实现了 default 输入框样式。UX.md 有更新：邮箱格式错误时，输入框边框变红色（--color-error），下方显示行内错误文案「请输入有效的邮箱地址」；密码为空点提交时，显示「密码不能为空」；两个字段都有错误时，聚焦到第一个出错的字段。UI_SPEC 里说错误态不能只靠颜色，还要有文案提示（已满足）；focus 时边框颜色用 --color-primary。帮我在现有组件基础上加上这些校验逻辑，不要改变组件已有的 props 接口。",
+      "expected_output": "修改后的 LoginForm，增加邮箱格式校验和密码非空校验，错误时展示行内错误文案，颜色用 CSS 变量，提交时自动聚焦第一个出错字段",
+      "assertions": [
+        {
+          "name": "email-format-validation",
+          "description": "邮箱格式校验逻辑存在（正则或类似方式）"
+        },
+        {
+          "name": "error-message-displayed",
+          "description": "校验失败时有错误文案渲染，不只靠颜色"
+        },
+        {
+          "name": "error-color-uses-variable",
+          "description": "错误态颜色使用 CSS 变量（--color-error 或类似）而非硬编码"
+        },
+        {
+          "name": "focus-first-error-field",
+          "description": "提交时有聚焦到第一个错误字段的逻辑"
+        }
+      ],
+      "files": []
+    }
+  ]
+}

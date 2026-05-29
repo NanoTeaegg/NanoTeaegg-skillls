@@ -1,0 +1,62 @@
+[
+  {
+    "query": "我已经有了 UI_SPEC.md 和 UX.md，现在要把任务列表页的前端代码写出来，React + Tailwind，帮我实现",
+    "should_trigger": true
+  },
+  {
+    "query": "按照设计稿把这个登录页面用 SwiftUI 写出来，UI_SPEC 里定义的颜色和字体都要用上",
+    "should_trigger": true
+  },
+  {
+    "query": "现有的 ProfileCard 组件样式不对，UX.md 里说 hover 时要显示操作按钮，帮我加上",
+    "should_trigger": true
+  },
+  {
+    "query": "UI_SPEC 里定的 Design Token 在代码里没有用上，颜色都硬编码了，帮我改成 CSS 变量",
+    "should_trigger": true
+  },
+  {
+    "query": "帮我把这个 Android 页面按 UI_SPEC.android.md 实现出来，用 Jetpack Compose",
+    "should_trigger": true
+  },
+  {
+    "query": "UX.md 里定义了空态要显示插图和引导文案，现在代码里只有一行文字，帮我补全",
+    "should_trigger": true
+  },
+  {
+    "query": "按文档验收一下前端代码，看看哪里没对齐 UI_SPEC 的规范",
+    "should_trigger": true
+  },
+  {
+    "query": "把设计稿落地，这个弹窗组件要覆盖 default/loading/error 三种状态",
+    "should_trigger": true
+  },
+  {
+    "query": "帮我把 PRD 里的功能需求整理成用户故事，产出一份 PRD 文档",
+    "should_trigger": false
+  },
+  {
+    "query": "数据库表结构怎么设计？用户表需要哪些字段，用 PostgreSQL",
+    "should_trigger": false
+  },
+  {
+    "query": "技术栈选什么？React 还是 Vue，后端用 FastAPI 还是 NestJS",
+    "should_trigger": false
+  },
+  {
+    "query": "这个按钮组件的颜色应该用哪个主色，圆角多少合适，帮我定一个视觉规范",
+    "should_trigger": false
+  },
+  {
+    "query": "写一个单元测试，覆盖 Button 组件的点击事件和 disabled 状态",
+    "should_trigger": false
+  },
+  {
+    "query": "帮我梳理一下用户注册流程，从填表单到验证邮箱的交互步骤",
+    "should_trigger": false
+  },
+  {
+    "query": "这个 API 接口返回 500 错误，帮我找一下后端代码的问题",
+    "should_trigger": false
+  }
+]
