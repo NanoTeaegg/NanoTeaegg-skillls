@@ -1,12 +1,17 @@
 #!/bin/bash
-# 提交后自动读取被修改的 SKILL.md 中的 version 字段并打 tag
+# 提交后读取被改动 SKILL.md 的 version，打注释标签。
+# tag 已存在且指向其他提交时：警告并拒绝覆盖；可交互询问是否按规范递增版本并追加发布提交。
+set -uo pipefail
 
-CHANGED=$(git diff-tree --no-commit-id -r --name-only HEAD | grep 'skills/.*/SKILL.md')
+CHANGED=$(git diff-tree --no-commit-id -r --name-only HEAD | grep 'skills/.*/SKILL.md' || true)
+HEAD_SHA=$(git rev-parse HEAD)
 
-for SKILL_FILE in $CHANGED; do
+echo "$CHANGED" | while IFS= read -r SKILL_FILE; do
+  [ -n "$SKILL_FILE" ] || continue
   [ -f "$SKILL_FILE" ] || continue
-  SKILL_NAME=$(basename $(dirname "$SKILL_FILE"))
-  VERSION=$(grep '^version:' "$SKILL_FILE" | sed 's/version:[[:space:]]*//' | tr -d '[:space:]')
+
+  SKILL_NAME=$(basename "$(dirname "$SKILL_FILE")")
+  VERSION=$(grep '^version:' "$SKILL_FILE" | head -1 | sed 's/version:[[:space:]]*//' | tr -d '[:space:]')
 
   if [ -z "$VERSION" ]; then
     echo "[skills] 警告: $SKILL_FILE 缺少 version 字段，跳过打 tag"
@@ -14,7 +19,53 @@ for SKILL_FILE in $CHANGED; do
   fi
 
   TAG="${SKILL_NAME}/${VERSION}"
-  if git tag -f "$TAG" 2>/dev/null; then
+
+  # tag 不存在 -> 直接打注释标签
+  if ! git rev-parse -q --verify "refs/tags/$TAG" >/dev/null; then
+    git tag -a "$TAG" -m "Release ${SKILL_NAME} ${VERSION}"
     echo "[skills] 已打 tag: $TAG"
+    continue
   fi
+
+  EXISTING=$(git rev-list -n 1 "$TAG")
+
+  # tag 已指向当前提交 -> 幂等跳过
+  if [ "$EXISTING" = "$HEAD_SHA" ]; then
+    echo "[skills] tag $TAG 已指向当前提交，跳过"
+    continue
+  fi
+
+  # tag 已存在且指向其他提交 -> 警告并拒绝覆盖
+  echo "[skills] 警告: tag $TAG 已存在且指向 ${EXISTING:0:7}，未覆盖。"
+  echo "         这通常意味着忘了在 SKILL.md 里递增 version。"
+
+  # 计算按规范递增后的版本：最后一段当整数 +1（v0.2->v0.3, v0.9->v0.10）
+  BUMPED=$(awk -F. -v OFS=. '{ $NF = $NF + 1; print }' <<< "${VERSION#v}")
+  NEW_VERSION="v${BUMPED}"
+  NEW_TAG="${SKILL_NAME}/${NEW_VERSION}"
+
+  # 无法交互（IDE/GUI/CI）时降级为只提示，不自动改动
+  if ! { [ -e /dev/tty ] && [ -r /dev/tty ]; }; then
+    echo "         建议递增到 ${NEW_VERSION}：改 ${SKILL_FILE} 的 version 后重新提交。"
+    echo "         如确需强制重打: git tag -fa \"$TAG\" -m \"...\""
+    continue
+  fi
+
+  printf "[skills] 是否将 %s 递增到 %s 并追加一次发布提交? [y/N] " "$SKILL_NAME" "$NEW_VERSION" > /dev/tty
+  read -r ANSWER < /dev/tty
+  case "$ANSWER" in
+    y|Y|yes|YES)
+      if git rev-parse -q --verify "refs/tags/$NEW_TAG" >/dev/null; then
+        echo "[skills] 警告: 目标 tag $NEW_TAG 也已存在，已取消自动递增，请手动处理。"
+        continue
+      fi
+      sed -i.bak "s/^version:.*/version: ${NEW_VERSION}/" "$SKILL_FILE" && rm -f "${SKILL_FILE}.bak"
+      git add "$SKILL_FILE"
+      git commit -m "bump ${SKILL_NAME} to ${NEW_VERSION}"
+      echo "[skills] 已递增到 ${NEW_VERSION} 并追加发布提交（新提交会自动打 tag ${NEW_TAG}）"
+      ;;
+    *)
+      echo "[skills] 已跳过，未修改版本，未覆盖 tag。"
+      ;;
+  esac
 done

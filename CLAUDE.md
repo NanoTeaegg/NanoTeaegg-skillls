@@ -18,7 +18,18 @@ git config core.hooksPath .githooks
 
 每个 skill 从 `v0.1` 开始，每次迭代递增 `0.1`，没有正式发布时这个数字可以无限递增，例如`0.100`或者`0.99999`都可以，直到正式发布为 `v1.0`，继续按递增 `0.1` 的方式递增。
 
-版本号写在 `SKILL.md` 的 frontmatter 中，提交时 `.githooks/post-commit` 会自动读取并打 tag，**无需手动执行 `git tag`**。
+版本号写在 `SKILL.md` 的 frontmatter 中，提交时 `.githooks/post-commit` 会自动读取并打**注释标签**，**无需手动执行 `git tag`**。
+
+### post-commit hook 行为
+
+| 情况 | 行为 |
+|------|------|
+| tag 不存在 | 打注释标签 `git tag -a` |
+| tag 已指向当前提交 | 幂等跳过 |
+| tag 指向其他提交 + 终端交互 | 警告 → 询问是否递增版本并追加发布提交（默认 N） |
+| tag 指向其他提交 + 非交互（IDE/GUI/CI） | 警告并给出建议，**不擅自修改** |
+
+"tag 指向其他提交"通常意味着忘记在 `SKILL.md` 里递增 `version`。交互式询问只在终端 `git commit` 时生效；从 Cursor 或 GUI 客户端提交时会降级为只警告。
 
 将某个 skill 还原到指定版本（不影响其他 skill）：
 ```bash
