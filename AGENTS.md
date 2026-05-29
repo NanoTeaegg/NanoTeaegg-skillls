@@ -40,6 +40,23 @@ git push --tags
 cp -r skills/<name> ~/.Codex/skills/<name>
 ```
 
+## Skill 创建与迭代
+
+当用户要求新增、修改或优化 skill 时,默认按完整 skill-creator 工作流执行:
+
+1. 必须调用可用的 `skill-creator` skill(例如用户显式提到 `$skill-creator` 时更要使用),不要只手写 `SKILL.md`。
+2. 新 skill 从 `version: v0.1` 开始,路径遵循 `skills/<category>/<skill>/SKILL.md`。
+3. 创建或修改 skill 后,自动根据项目规范创建/更新对应评测文件:
+   - `evals/<category>/<skill>/evals.json`
+   - `evals/<category>/<skill>/trigger-eval.json`
+   - 如质量评测需要,补充或更新 `scripts/graders/<skill_name_with_underscores>.py`
+4. 自动执行质量评测:为每个 eval 在 `workspaces/<skill>/<platform>/eval-<id>/outputs` 下生成产物,再运行 `./scripts/eval-skill-quality.py --evals <evals.json> --outputs-dir workspaces/<skill>/<platform>`。
+5. 自动生成 review 页面供人工检查。优先使用 `skill-creator/eval-viewer/generate_review.py --static`,输出到 `workspaces/<skill>/<platform>/review.html`。生成前确保每个 eval 有 viewer 可读的 `eval_metadata.json`、`grading.json`,以及可直接展示的输出文件。
+6. 自动运行低成本触发评测入口 `./scripts/eval-trigger-low-cost.py`。如果当前平台 backend 只能输出 `limited` 可信度,如实汇报限制,不要把它当作真实触发成功或失败证据。
+7. 最终汇报新增/修改的文件、质量评测通过/失败、review 页路径、触发评测结果和静态兼容性审查结论。
+
+除非用户明确说"只起草、不创建 eval、不跑测试",否则新增或迭代 skill 不应停在 `SKILL.md`。
+
 ## Skill 质量评测
 
 当用户要求“对 @skills/<category>/<skill>/SKILL.md 进行质量测试和静态兼容性审查”时,不要使用 runner。由当前 Agent 直接执行：

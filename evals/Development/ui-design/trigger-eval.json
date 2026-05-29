@@ -1,0 +1,22 @@
+[
+  {"query": "PRD、UX 和 TECH_DESIGN 都在 docs 里了,本期只做 Web 管理后台,帮我出一份 Web UI 设计规范", "should_trigger": true},
+  {"query": "这个 SaaS 想做得像专业数据工具,不是营销页。帮我把 Web 的 Design Tokens 和组件规范整理成 UI_SPEC.md", "should_trigger": true},
+  {"query": "登录、仪表盘、列表页、详情页都定了交互了,现在只给 iOS App 定界面视觉方向和组件状态", "should_trigger": true},
+  {"query": "帮我把 UX.md 转成 Android UI 规范,重点是空态、错误态、loading、禁用态的视觉规则", "should_trigger": true},
+  {"query": "我们后台表格太松散了,想统一成高密度风格,顺便把字号、行高、hover、选中态写进设计规范", "should_trigger": true},
+  {"query": "这个移动端小程序要先定一套界面规范:主色、中性色、触控尺寸、底部导航和表单状态", "should_trigger": true},
+  {"query": "我不想现在写 React,先帮我定 UI_SPEC,包括颜色 token、圆角、阴影、弹窗和 Toast 怎么用", "should_trigger": true},
+  {"query": "已有 UI_SPEC.md,现在品牌色从蓝色改成绿色,帮我更新 token、按钮、链接、焦点态和变更记录", "should_trigger": true},
+  {"query": "给这个 B 端管理后台定一套视觉规范,要求安静、密度高、可访问性别太差", "should_trigger": true},
+  {"query": "产品要支持暗色模式,但先只做 Android 版,帮我把浅色/暗色 token 和组件状态规则补进 UI 规范", "should_trigger": true},
+  {"query": "帮我把会议室预订系统的用户流程和信息架构整理成 UX.md,每个状态该提示什么也写清楚", "should_trigger": false},
+  {"query": "这个项目用 shadcn/ui 还是 Ant Design?顺便 Next.js 目录结构怎么组织", "should_trigger": false},
+  {"query": "按设计规范把登录页写成 React + Tailwind 组件,接口先 mock 掉", "should_trigger": false},
+  {"query": "帮我设计数据库表,用户、会议室、预订记录之间的关系和索引都要有", "should_trigger": false},
+  {"query": "做一张登录页的 Figma 视觉稿,风格参考 Linear,我要可以直接给设计师看的图", "should_trigger": false},
+  {"query": "这个页面按钮点了没反应,帮我查一下前端 bug,看看事件绑定哪里坏了", "should_trigger": false},
+  {"query": "我想做一个订阅收入追踪 SaaS,先帮我把功能范围、用户故事和验收标准写成 PRD", "should_trigger": false},
+  {"query": "根据 PRD 和 UX 写开发启动技术方案,Web 用什么框架、后端怎么拆、ORM 怎么选", "should_trigger": false},
+  {"query": "帮我画一张产品宣传海报,要有渐变背景和大标题", "should_trigger": false},
+  {"query": "review 一下这个 PR 的 CSS,看看有没有样式覆盖和响应式问题", "should_trigger": false}
+]
