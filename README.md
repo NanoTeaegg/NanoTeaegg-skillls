@@ -8,8 +8,13 @@ NanoTeaegg的Skills合集，通过monorepo架构用于统一开发、版本管�
 myskills/
 ├── skills/                        # skill 源码
 │   ├── Development/               # 开发类
-│   │   ├── code-review/
-│   │   └── web-development/
+│   │   ├── requirements-definition/
+│   │   ├── ux-design/
+│   │   ├── ui-design/
+│   │   ├── dev-kickoff/
+│   │   ├── database/
+│   │   ├── frontend-dev/
+│   │   └── testing-quality/
 │   └── Research/                  # 研究类
 │       └── market-research/
 ├── evals/                         # 每个 skill 的质量/触发评测集
@@ -24,10 +29,17 @@ myskills/
 
 ### Development
 
+按产品交付链路排列（PRD → UX → UI → 技术方案 → 数据 → 实现 → 测试）：
+
 | Skill | 版本 | 描述 |
 |-------|------|------|
-| code-review | v0.1 | 待开发 |
-| web-development | v0.1 | 待开发 |
+| requirements-definition | v0.2 | 结构化访谈澄清需求，产出 PRD |
+| ux-design | v0.2 | 用户流程、界面状态与交互逻辑，产出 UX.md |
+| ui-design | v0.4 | 单一目标平台的视觉与组件规范，产出 UI_SPEC.md |
+| dev-kickoff | v0.2 | 技术选型与模块划分，产出 TECH_DESIGN.md |
+| database | v0.2 | 表结构、索引与迁移规范，产出 SCHEMA 文档 |
+| frontend-dev | v0.2 | 按设计文档落地 Web / iOS / Android 界面代码 |
+| testing-quality | v0.2 | 测试计划与自动化测试，产出 TEST_PLAN.md |
 
 ### Research
 
