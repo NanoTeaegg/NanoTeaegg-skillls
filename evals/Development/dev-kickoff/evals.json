@@ -1,0 +1,23 @@
+{
+  "skill_name": "dev-kickoff",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "我们已经有 docs/PRD.md 和 docs/UX.md,是一个面向连锁健身房的会员预约和私教排课系统。帮我做开发启动技术方案,需要 Web 管理后台、会员 iOS/Android App,暂时不做 Windows。",
+      "expected_output": "一份写入 docs/TECH_DESIGN.md 的中文技术方案,读取 PRD/UX 作为输入,包含目标平台范围、Android/iOS/Web/Windows 分平台技术栈、后端与 ORM 选型、总体架构、模块划分、关键技术决策、风险、边界与非目标。Windows 应明确本期不建设或待确认,不得展开数据库表结构和具体业务代码。",
+      "files": ["docs/PRD.md", "docs/UX.md"]
+    },
+    {
+      "id": 2,
+      "prompt": "我没有现成 PRD,但想做一个给小团队用的跨平台任务管理工具。需要网页、Windows 桌面端,以后可能补 iOS 和 Android。你先帮我把技术选型和架构方案定下来。",
+      "expected_output": "在缺少 PRD/UX 时先访谈或记录开放问题,再产出 docs/TECH_DESIGN.md。文档应把 Android app、iOS app、Web、Windows 应用分别列出并说明本期/未来范围;包含技术栈理由、替代方案、模块划分、风险与开放问题,不把未确认信息伪装成确定结论。",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "技术方案要改一下:Windows 端不想用 Electron 了,想换成 Tauri,原因是安装包太大。请更新 TECH_DESIGN。",
+      "expected_output": "在已有 docs/TECH_DESIGN.md 上原地更新 Windows 应用技术栈与关键技术决策,说明改用 Tauri 的理由、取舍、风险和下游影响,并在变更记录追加一行。不要重写整篇,不要新增数据库表结构。",
+      "files": ["docs/TECH_DESIGN.md"]
+    }
+  ]
+}

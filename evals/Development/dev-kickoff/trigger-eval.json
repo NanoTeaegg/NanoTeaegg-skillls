@@ -1,0 +1,22 @@
+[
+  {"query": "docs 里 PRD 和 UX 都写好了,现在帮我出一份开发启动技术方案,技术栈、架构和模块划分都要定一下", "should_trigger": true},
+  {"query": "这个产品要同时做 Android app、iOS app、Web 管理后台和 Windows 客户端,你帮我分别选技术栈并说明原因", "should_trigger": true},
+  {"query": "我们准备进入开发了,先别写代码,帮我把后端框架、ORM、前端框架和整体架构捋成 TECH_DESIGN.md", "should_trigger": true},
+  {"query": "小团队做一个会员预约 SaaS,PRD 在 docs/PRD.md,UX 在 docs/UX.md,帮我做 dev kickoff", "should_trigger": true},
+  {"query": "React Native、Flutter、Swift/Kotlin 原生怎么选?这个项目后面还有 Web 和 Windows 端,需要一份技术选型文档", "should_trigger": true},
+  {"query": "我没有 PRD,只有一个大概想法:做跨平台任务管理工具。你先问我必要问题,再帮我定架构和技术方案", "should_trigger": true},
+  {"query": "帮我写 docs/TECH_DESIGN.md,要包含关键技术决策、模块划分、技术风险和下游给数据库设计的输入", "should_trigger": true},
+  {"query": "现有技术方案里 Windows 用 Electron,现在想改 Tauri,帮我更新原因、风险和变更记录", "should_trigger": true},
+  {"query": "这个 Web + App 项目后端用 NestJS 还是 Django?数据库访问层用 Prisma 还是别的?给我做成正式技术方案", "should_trigger": true},
+  {"query": "开发 kickoff 前帮我确认架构边界:哪些逻辑跨端复用,哪些放后端,哪些是客户端平台专属", "should_trigger": true},
+  {"query": "我想做一个内部会议室预订系统,现在只有想法,帮我把功能需求和验收标准先理清楚", "should_trigger": false},
+  {"query": "把 PRD 里的用户流程、页面状态、错误提示整理成 UX.md,先不谈技术栈", "should_trigger": false},
+  {"query": "给这个预约系统设计数据库表、字段、索引和外键,顺便写迁移规范", "should_trigger": false},
+  {"query": "根据 PRD 的验收标准,帮我写测试计划和 E2E 用例矩阵", "should_trigger": false},
+  {"query": "帮我把登录页用 React 和 Tailwind 实现出来,接口先 mock", "should_trigger": false},
+  {"query": "review 一下这个 PR 的后端代码,看看有没有权限绕过和 N+1 查询", "should_trigger": false},
+  {"query": "我们产品的竞品有哪些?帮我做市场调研和定位分析", "should_trigger": false},
+  {"query": "帮我把 PRD 翻译成英文,保留 Markdown 表格", "should_trigger": false},
+  {"query": "这个数据库字段 user_id 应该建普通索引还是唯一索引?", "should_trigger": false},
+  {"query": "我已经决定用 Next.js 了,直接帮我初始化项目并写页面代码", "should_trigger": false}
+]
