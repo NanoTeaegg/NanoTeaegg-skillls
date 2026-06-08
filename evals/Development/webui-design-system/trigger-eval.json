@@ -1,0 +1,22 @@
+[
+  {"query": "本期只做 Web 管理后台，帮我出一套设计系统：UI_SPEC、tokens.css、components.css 和带左侧目录的设计系统文档站 preview", "should_trigger": true},
+  {"query": "把这个 SaaS 的 Web Design Tokens、组件 API 和 TDesign 风格的 design-system docs preview 整理出来，要可观测可预览", "should_trigger": true},
+  {"query": "后台表格太松散了，想统一成高密度风格，把字号、行高、hover、选中态写进设计系统并在文档站预览", "should_trigger": true},
+  {"query": "先别写业务页面，帮我定 UI_SPEC 和设计系统代码：颜色 token、圆角、阴影、弹窗、Toast 怎么用", "should_trigger": true},
+  {"query": "品牌主色从蓝改成绿，帮我同步更新 token、按钮、链接、焦点态、组件库、文档站目录和变更记录", "should_trigger": true},
+  {"query": "给这个 B 端管理后台定一套视觉规范和组件文档站点，安静、密度高、可访问性别太差", "should_trigger": true},
+  {"query": "折叠面板这是第二次用到了，帮我回收进 components.css、行为放 components.js，并在设计系统文档站加一段 demo", "should_trigger": true},
+  {"query": "项目 UI 要保持整体一致，我新增了一个标签组件，帮我同步进设计系统的 token 和组件库并更新预览", "should_trigger": true},
+  {"query": "产品要支持暗色模式，把浅色/深色 token、组件状态规则补进 Web 设计系统并在文档站切换预览", "should_trigger": true},
+  {"query": "帮我把会议室预订系统的用户流程和信息架构整理成 UX.md，每个状态该提示什么也写清楚", "should_trigger": false},
+  {"query": "这个项目用 shadcn/ui 还是 Ant Design？顺便 Next.js 目录结构怎么组织、后端怎么拆", "should_trigger": false},
+  {"query": "按设计规范把登录页写成 React + Tailwind 业务组件，接口先 mock 掉", "should_trigger": false},
+  {"query": "帮我设计数据库表，用户、会议室、预订记录之间的关系和索引都要有", "should_trigger": false},
+  {"query": "做一个 landing page / 产品官网首页，参考 Linear 的风格，要好看的视觉和动效", "should_trigger": false},
+  {"query": "帮我做这个 iOS App 的设计系统：SwiftUI 的 DesignTokens 和组件规范", "should_trigger": false},
+  {"query": "给 Android App 出一套 Material 3 theme 设计系统和 Theme.kt", "should_trigger": false},
+  {"query": "这个页面按钮点了没反应，帮我查一下前端 bug，看看事件绑定哪里坏了", "should_trigger": false},
+  {"query": "我想做一个订阅收入追踪 SaaS，先帮我把功能范围、用户故事和验收标准写成 PRD", "should_trigger": false},
+  {"query": "帮我画一张产品宣传海报，要有渐变背景和大标题", "should_trigger": false},
+  {"query": "review 一下这个 PR 的 CSS，看看有没有样式覆盖和响应式问题", "should_trigger": false}
+]

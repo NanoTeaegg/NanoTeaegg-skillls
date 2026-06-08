@@ -1,0 +1,91 @@
+/* ============================================================================
+   components-starter.css — 组件库「事实源」起步种子
+   ----------------------------------------------------------------------------
+   把它复制为项目的 design-system/components.css，按产品 token 调整后扩展。
+   规则：
+   - 每个可复用组件 = 一组 .ds-* class，样式只消费 tokens.css 的 var(--*)。
+   - 不准在这里写裸 hex / px / ms；动效引用 motion token。
+   - 起步只放最常复用的 Button / Field / Tag / Card；其余组件「第二次被用到时」
+     才回收进来（详见 SKILL.md 的组件回收工作流）。
+   ============================================================================ */
+
+/* ---- Button -------------------------------------------------------------- */
+.ds-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  min-height: 36px;
+  padding: 0 var(--space-4);
+  border: var(--border-width-default) solid transparent;
+  border-radius: var(--radius-md);
+  background: transparent;
+  color: var(--color-text-primary);
+  font: inherit;
+  font-weight: var(--font-weight-strong);
+  cursor: pointer;
+  transition: background var(--motion-duration-fast) var(--ease-standard),
+    border-color var(--motion-duration-fast) var(--ease-standard),
+    transform var(--motion-duration-fast) var(--ease-standard);
+}
+.ds-btn:hover { background: var(--color-bg-elevated); }
+.ds-btn:active { transform: scale(0.98); }
+.ds-btn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-primary) 28%, transparent);
+}
+.ds-btn[disabled] { opacity: 0.45; cursor: not-allowed; }
+.ds-btn--primary { background: var(--color-primary); color: var(--color-bg-page); }
+.ds-btn--secondary { border-color: var(--color-border-strong, var(--color-border-subtle)); background: var(--color-bg-surface); }
+.ds-btn--danger { background: var(--color-danger); color: var(--color-bg-page); }
+.ds-btn--sm { min-height: 28px; padding: 0 var(--space-3); font-size: var(--font-size-caption); }
+
+/* ---- Field --------------------------------------------------------------- */
+.ds-field { display: flex; flex-direction: column; gap: var(--space-2); }
+.ds-field__label { font-size: var(--font-size-caption); color: var(--color-text-secondary); }
+.ds-input,
+.ds-textarea {
+  width: 100%;
+  padding: 9px var(--space-3);
+  border: var(--border-width-default) solid var(--color-border-subtle);
+  border-radius: var(--radius-md);
+  background: var(--color-bg-elevated);
+  color: var(--color-text-primary);
+  font: inherit;
+  transition: border-color var(--motion-duration-fast) var(--ease-standard),
+    box-shadow var(--motion-duration-fast) var(--ease-standard);
+}
+.ds-input:focus-visible,
+.ds-textarea:focus-visible {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-primary) 22%, transparent);
+}
+.ds-input[aria-invalid="true"],
+.ds-textarea[aria-invalid="true"] { border-color: var(--color-danger); }
+.ds-field__error { font-size: var(--font-size-caption); color: var(--color-danger); }
+
+/* ---- Tag ----------------------------------------------------------------- */
+.ds-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  min-height: 22px;
+  padding: 0 var(--space-2);
+  border-radius: var(--radius-sm);
+  background: var(--color-bg-elevated);
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-caption);
+  font-weight: var(--font-weight-strong);
+}
+.ds-tag--success { color: var(--color-success); background: color-mix(in srgb, var(--color-success) 14%, transparent); }
+.ds-tag--warning { color: var(--color-warning); background: color-mix(in srgb, var(--color-warning) 14%, transparent); }
+.ds-tag--danger { color: var(--color-danger); background: color-mix(in srgb, var(--color-danger) 14%, transparent); }
+
+/* ---- Card ---------------------------------------------------------------- */
+.ds-card {
+  border: var(--border-width-default) solid var(--color-border-subtle);
+  border-radius: var(--radius-lg);
+  background: var(--color-bg-surface);
+  padding: var(--space-4);
+}

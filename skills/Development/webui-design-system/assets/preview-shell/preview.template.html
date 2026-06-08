@@ -1,0 +1,151 @@
+<!doctype html>
+<!--
+  preview.template.html — 设计系统文档站骨架
+  ----------------------------------------------------------------------------
+  用法：复制为项目的 design-system/preview.html，并把同目录的 preview.css /
+  preview.js 一起拷过去（它们是工具外壳，verbatim 复制、不要改）。
+  你只需要：
+    1. 改 <link>/<title>/brand 文案。
+    2. 在 #ph-manifest 里登记本项目 tokens.css 的 token 清单（外壳据此自动渲染
+       色板/标尺/对比度，无需手画）。
+    3. 在「组件」区用真实 .ds-* class 渲染 demo（来自 components.css），
+       每个 demo 套 .ph-demo + .ph-demo-canvas + .ph-code。绝不在这里内联重写组件样式。
+  铁规则：preview 是渲染器，不是第二份实现；它引用 tokens.css/components.css，因此永不漂移。
+-->
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>项目名 · 设计系统</title>
+    <link rel="stylesheet" href="./tokens.css" />
+    <link rel="stylesheet" href="./components.css" />
+    <link rel="stylesheet" href="./preview.css" />
+    <!-- 暗色优先的产品可加：.ph-demo-canvas { background: var(--color-bg-surface); color: var(--color-text-primary); } -->
+  </head>
+  <body>
+    <div class="ph-app">
+      <aside class="ph-sidebar">
+        <div class="ph-brand">
+          <div class="ph-brand-mark">X</div>
+          <div class="ph-brand-text">
+            <span class="ph-brand-name">项目名</span>
+            <span class="ph-brand-sub">Design System</span>
+          </div>
+        </div>
+        <nav class="ph-nav-group">
+          <div class="ph-nav-label">全局变量 Tokens</div>
+          <a class="ph-nav-link" href="#colors">颜色</a>
+          <a class="ph-nav-link" href="#typography">字体</a>
+          <a class="ph-nav-link" href="#spacing">间距</a>
+          <a class="ph-nav-link" href="#radius">圆角</a>
+          <a class="ph-nav-link" href="#shadow">阴影</a>
+        </nav>
+        <nav class="ph-nav-group">
+          <div class="ph-nav-label">基础组件</div>
+          <a class="ph-nav-link" href="#button">Button</a>
+          <a class="ph-nav-link" href="#field">Field</a>
+          <!-- 复用第二次的组件回收到这里 -->
+        </nav>
+        <nav class="ph-nav-group">
+          <div class="ph-nav-label">规范</div>
+          <a class="ph-nav-link" href="#constraints">AI 落地约束</a>
+        </nav>
+      </aside>
+
+      <div class="ph-main">
+        <header class="ph-header">
+          <div style="display: flex; align-items: center; gap: 12px">
+            <button class="ph-icon-btn ph-menu-btn" data-ph-menu aria-label="菜单">☰</button>
+            <span class="ph-header-title">项目名 设计系统</span>
+          </div>
+          <div class="ph-header-actions">
+            <span class="ph-chip"><span class="dot"></span> tokens v0.1</span>
+            <button class="ph-icon-btn" data-ph-theme-toggle aria-label="切换主题">☾</button>
+          </div>
+        </header>
+
+        <main class="ph-content">
+          <div class="ph-hero">
+            <h1>项目名 设计系统</h1>
+            <p>一句话定位。本文档站引用 tokens.css 与 components.css 渲染真实 token 与真实组件。</p>
+          </div>
+
+          <!-- ===== Tokens（外壳自动渲染，留空容器即可）===== -->
+          <section class="ph-section" id="colors"><h2>颜色</h2><p class="ph-lead">…</p><div id="ph-colors"></div></section>
+          <section class="ph-section" id="typography"><h2>字体</h2><p class="ph-lead">…</p><div id="ph-type"></div></section>
+          <section class="ph-section" id="spacing"><h2>间距</h2><p class="ph-lead">…</p><div id="ph-spacing"></div></section>
+          <section class="ph-section" id="radius"><h2>圆角</h2><p class="ph-lead">…</p><div id="ph-radius"></div></section>
+          <section class="ph-section" id="shadow"><h2>阴影</h2><p class="ph-lead">…</p><div id="ph-shadow"></div></section>
+
+          <!-- ===== 组件 demo（用真实 class 渲染）===== -->
+          <section class="ph-section" id="button">
+            <h2>Button</h2>
+            <p class="ph-lead">用途与规范一句话。</p>
+            <div class="ph-demo">
+              <div class="ph-demo-canvas">
+                <button class="ds-btn ds-btn--primary">主操作</button>
+                <button class="ds-btn ds-btn--secondary">次操作</button>
+                <button class="ds-btn ds-btn--danger">危险</button>
+              </div>
+              <div class="ph-demo-bar">
+                <span class="ph-demo-bar-label">variant: primary / secondary / danger</span>
+                <span style="display: flex; gap: 8px">
+                  <button class="ph-copy-btn" data-ph-copy-code>复制</button>
+                  <button class="ph-copy-btn" data-ph-toggle-code>查看代码</button>
+                </span>
+              </div>
+              <div class="ph-code"><pre><code>&lt;button class="ds-btn ds-btn--primary"&gt;主操作&lt;/button&gt;</code></pre></div>
+            </div>
+            <div class="ph-guides">
+              <div class="ph-guide do"><div class="ph-guide-head">✓ Do</div><ul><li>…</li></ul></div>
+              <div class="ph-guide dont"><div class="ph-guide-head">✕ Don't</div><ul><li>…</li></ul></div>
+            </div>
+          </section>
+
+          <section class="ph-section" id="constraints">
+            <h2>AI 落地约束</h2>
+            <table class="ph-table">
+              <thead><tr><th>允许</th><th>禁止</th></tr></thead>
+              <tbody>
+                <tr><td>tokens.css 的 <code>var(--*)</code></td><td>裸 hex / rgb</td></tr>
+                <tr><td>components.css 的 <code>.ds-*</code></td><td>页面内自写组件样式</td></tr>
+                <tr><td>motion token</td><td>裸 ms / cubic-bezier</td></tr>
+              </tbody>
+            </table>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <script type="application/json" id="ph-manifest">
+    {
+      "colors": [
+        {"name": "Primary", "var": "--color-primary", "usage": "主按钮、链接、选中"},
+        {"name": "Surface", "var": "--color-bg-surface", "usage": "卡片、面板底色"},
+        {"name": "Text", "var": "--color-text-primary", "usage": "正文、标题"},
+        {"name": "Success", "var": "--color-success", "usage": "成功"},
+        {"name": "Danger", "var": "--color-danger", "usage": "错误、删除"}
+      ],
+      "type": [
+        {"name": "Page Title", "var": "--font-size-page-title", "weightVar": "--font-weight-strong", "sample": "页面标题样张"},
+        {"name": "Body", "var": "--font-size-body", "sample": "正文样张 The quick brown fox 中文"}
+      ],
+      "spacing": [
+        {"name": "space-1", "var": "--space-1"},
+        {"name": "space-2", "var": "--space-2"},
+        {"name": "space-4", "var": "--space-4"}
+      ],
+      "radius": [
+        {"name": "radius-sm", "var": "--radius-sm"},
+        {"name": "radius-md", "var": "--radius-md"}
+      ],
+      "shadow": [
+        {"name": "shadow-popover", "var": "--shadow-popover"}
+      ]
+    }
+    </script>
+
+    <script src="./components.js"></script>
+    <script src="./preview.js"></script>
+  </body>
+</html>

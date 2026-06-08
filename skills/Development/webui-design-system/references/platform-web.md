@@ -180,9 +180,16 @@
 
 ---
 
+## Web 设计系统代码要求
+
+- 默认生成 `design-system/tokens.css`,用 CSS Variables 表达全部 token。
+- 若项目已使用 Tailwind,可同步提供 token key 映射,但不要强行重构现有 Tailwind 配置。
+- 若项目已使用 shadcn/ui、Radix、Ant Design、MUI 等组件库,优先定义 token 和 variant 映射,不要另起一套重复组件。
+- `design-system/preview.html` 必须是设计系统文档站点:左侧 Sidebar 分组导航,右侧内容展示颜色/字体/间距/组件规范、Dos and Don'ts、代码块、视觉预览、主题切换和可编辑示例。
+
 ## Web 禁区
 
-- 不要在规范文档里写 React/Vue/Tailwind 代码
-- 不要替 dev-kickoff 选组件库（shadcn/ui、Ant Design、MUI 等）
+- 不要写登录页、仪表盘、详情页等业务页面代码
+- 不要替 dev-kickoff 选择非 UI 架构、路由、状态管理、后端/API 方案
 - 不要写 iOS 导航栏、Android Material 专属规则
 - 不要在 UI_SPEC 里定义动效的具体代码实现——只定档位（L1/L2/L3）和原则

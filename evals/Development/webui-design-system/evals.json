@@ -1,0 +1,26 @@
+{
+  "skill_name": "webui-design-system",
+  "evals": [
+    {
+      "id": 1,
+      "scenario": "new",
+      "prompt": "这是一个 AI 视频 agent 工具网站（暗色工作台），本期只做 Web。请为它新建一套可观测、可预览的设计系统：值源 tokens.css、组件库 components.css、精简 UI_SPEC，以及一个像 TDesign/Storybook 那样专业的设计系统文档站 preview.html（要引用并渲染真实 token 与真实组件，不要重画 mock）。不要写业务页面。",
+      "expected_output": "一套 Web 设计系统产物：docs/UI_SPEC.md（中文精简契约，含文档信息、工程映射、Design Tokens、基础 UI 约定、组件库、AI 落地约束、文档站验收、可访问性、非目标边界、开放问题、变更记录）；design-system/tokens.css（:root CSS 变量，含颜色/字体/间距/圆角/阴影，以及 motion 的 duration 与 ease token）；design-system/components.css（.ds-* 组件 class，只消费 token）；design-system/preview.html 文档站（左侧 Sidebar 分组导航：全局变量/基础组件/业务组件或模式/规范，右侧颜色（带对比度与复制）、字体、间距、圆角、阴影、组件 demo、Dos and Don'ts、代码块；引用 tokens.css 与 components.css，渲染真实组件而非重画；支持浅/深色切换）。preview.html 必须引用工具外壳 preview.css/preview.js。不得展开原生 iOS/Android 规则，不得写登录页/仪表盘等业务页面，不得做后端/API/数据库/状态管理选型或重写 UX 流程。",
+      "files": []
+    },
+    {
+      "id": 2,
+      "scenario": "change",
+      "prompt": "已经有 docs/UI_SPEC.md、design-system/tokens.css、components.css 和 preview.html。现在品牌主色要从紫色改成蓝色，请同步更新 token、按钮/链接/焦点/状态色、组件库、文档站，并在变更记录里追加一行说明影响范围。",
+      "expected_output": "在现有四个事实源上原地同步变更：tokens.css 改 --color-primary 及相关 hover/focus；components.css 中引用主色的 .ds-* 组件随之生效；docs/UI_SPEC.md 的颜色 token 表与变更记录更新（追加日期/类型/内容/原因/影响范围/同步文件一行）；preview.html 文档站随之展示新主色。说明改主色对按钮、链接、焦点态、图表与状态色的影响范围。保持四者一致、同一事实源。不得新建无关业务页面，不得引入原生平台规则。",
+      "files": ["docs/UI_SPEC.md", "design-system/tokens.css", "design-system/components.css", "design-system/preview.html"]
+    },
+    {
+      "id": 3,
+      "scenario": "recycle",
+      "prompt": "项目里折叠面板（Accordion）已经第二次被用到了，请把它回收进设计系统：抽成 components.css 的 .ds-* class、行为放进 components.js（动效用 motion token，不要裸写 ms/cubic-bezier）、在 UI_SPEC 组件库登记、在 preview.html 加一段真实 demo，并在变更记录追加一行。",
+      "expected_output": "组件回收落地：design-system/components.css 新增 .ds-accordion 系列 class，样式只消费 token；design-system/components.js 实现折叠行为，过渡用 var(--motion-duration-*) 与 var(--ease-*)，不出现裸 ms 或 cubic-bezier；docs/UI_SPEC.md 组件库登记 Accordion（用途/变体/状态/token 依赖/行为动效编排/禁止用法）并在变更记录追加一行；design-system/preview.html 增加用真实 .ds-accordion class 渲染的 demo（含查看代码）。不得在 preview 内联重写组件样式，不得写业务页面。",
+      "files": ["docs/UI_SPEC.md", "design-system/tokens.css", "design-system/components.css", "design-system/preview.html"]
+    }
+  ]
+}
