@@ -1,7 +1,7 @@
 ---
 name: ux-design
-description: 交互设计 skill——把 PRD 里"要做什么"翻译成用户流程、界面状态和交互逻辑，产出 UX.md。当用户要理清交互流程、页面状态、边界情况、信息架构或用户旅程时触发。不含视觉规范（→ ui-design）、前端代码（→ frontend-dev）、技术选型（→ dev-kickoff）、数据库设计（→ database）。
-version: v0.2
+description: 交互设计 skill——把 PRD 里"要做什么"翻译成用户流程、界面状态和交互逻辑，产出 UX.md。当用户要理清交互流程、页面状态、边界情况、信息架构或用户旅程时触发。不含视觉规范（→ webui-design-system）、前端代码（→ frontend-dev）、技术选型（→ dev-kickoff）、数据库设计（→ database）。
+version: v0.3
 ---
 
 # UX 交互设计

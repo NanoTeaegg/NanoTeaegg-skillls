@@ -34,11 +34,11 @@ myskills/
 | Skill | 版本 | 描述 |
 |-------|------|------|
 | requirements-definition | v0.2 | 结构化访谈澄清需求，产出 PRD |
-| ux-design | v0.2 | 用户流程、界面状态与交互逻辑，产出 UX.md |
+| ux-design | v0.3 | 用户流程、界面状态与交互逻辑，产出 UX.md |
 | webui-design-system | v0.7 | Web 可观测/可预览设计系统：tokens.css + components.css 组件库 + 外壳文档站 preview.html + UI_SPEC + diff/lint |
-| dev-kickoff | v0.2 | 技术选型与模块划分，产出 TECH_DESIGN.md |
+| dev-kickoff | v0.3 | 技术选型与模块划分，产出 TECH_DESIGN.md |
 | database | v0.2 | 表结构、索引与迁移规范，产出 SCHEMA 文档 |
-| frontend-dev | v0.2 | 按设计文档落地 Web / iOS / Android 界面代码 |
+| frontend-dev | v0.3 | 按设计文档落地 Web / iOS / Android 界面代码 |
 | testing-quality | v0.2 | 测试计划与自动化测试，产出 TEST_PLAN.md |
 
 ### Research

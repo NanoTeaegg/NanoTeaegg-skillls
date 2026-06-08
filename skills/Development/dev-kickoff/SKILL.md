@@ -1,7 +1,7 @@
 ---
 name: dev-kickoff
-description: 技术方案 skill——把 PRD/UX 已明确的需求翻译成技术选型、模块划分和关键技术决策，产出 TECH_DESIGN.md。当用户讨论技术栈选型、架构设计、开发 kickoff 时触发。不含功能需求（→ requirements-definition）、交互/视觉设计（→ ux-design/ui-design）、数据库细节（→ database）、业务代码实现。
-version: v0.2
+description: 技术方案 skill——把 PRD/UX 已明确的需求翻译成技术选型、模块划分和关键技术决策，产出 TECH_DESIGN.md。当用户讨论技术栈选型、架构设计、开发 kickoff 时触发。不含功能需求（→ requirements-definition）、交互/视觉设计（→ ux-design/webui-design-system）、数据库细节（→ database）、业务代码实现。
+version: v0.3
 ---
 
 # 开发启动技术方案(Dev Kickoff)

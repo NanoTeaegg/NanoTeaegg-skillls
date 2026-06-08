@@ -1,7 +1,7 @@
 ---
 name: frontend-dev
-description: 前端实现 skill——按 UI_SPEC/UX/TECH_DESIGN 已明确的规范，写出可运行的界面代码（Web/iOS/Android）。当用户要把设计文档/界面规范落地为代码、修改/验收已有界面时触发。不含需求变更（→ requirements-definition）、交互/视觉规范定义（→ ux-design/ui-design）、架构选型（→ dev-kickoff）。
-version: v0.2
+description: 前端实现 skill——按 UI_SPEC/UX/TECH_DESIGN 已明确的规范，写出可运行的界面代码（Web/iOS/Android）。当用户要把设计文档/界面规范落地为代码、修改/验收已有界面时触发。不含需求变更（→ requirements-definition）、交互/视觉规范定义（→ ux-design/webui-design-system）、架构选型（→ dev-kickoff）。
+version: v0.3
 ---
 
 # 前端实现(Frontend Dev)
@@ -30,7 +30,7 @@ UI_SPEC、UX、TECH_DESIGN 三份文档共同构成了"代码应该是什么样"
 3. `docs/TECH_DESIGN.md`：目标平台、技术栈、组件库、路由方案、已定架构约束。
 4. `docs/PRD.md`：核心场景和验收标准（按需参考，不重复读已覆盖的内容）。
 
-如果 UI_SPEC 不存在，不要自行发明视觉规则——告诉用户"还没有 UI_SPEC.md，建议先用 ui-design skill 产出一份，或者你把关键视觉决策告诉我，我记录下来后继续"，等确认后再写代码。
+如果 UI_SPEC 不存在，不要自行发明视觉规则——告诉用户"还没有 UI_SPEC.md，建议先用 webui-design-system skill 产出一份，或者你把关键视觉决策告诉我，我记录下来后继续"，等确认后再写代码。
 
 ### 第 2 步：判断目标平台 & 技术栈
 
@@ -117,7 +117,7 @@ UI_SPEC.md > UX.md > TECH_DESIGN.md > 个人判断
 
 - ❌ 修改产品功能范围 → requirements-definition
 - ❌ 重新设计用户流程或信息架构 → ux-design
-- ❌ 调整 Design Token、修改视觉规范 → ui-design
+- ❌ 调整 Design Token、修改视觉规范 → webui-design-system
 - ❌ 数据库表结构、字段设计 → database
 - ❌ 后端 API 实现、服务端业务逻辑 → 后端开发
 - ❌ 架构选型、技术栈决策 → dev-kickoff
